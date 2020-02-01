@@ -1,0 +1,81 @@
+                                                        Bootstrap
+    CSS 文件
+将 Bootstrap 的 CSS 文件以 <link> 标签的形式添加到 <head> 标签中，并放置在所有其它样式表之前就行了。
+
+   JS 文件
+Bootstrap 所提供的许多组件都依赖 JavaScript 才能运行。具体来说，这些组件都依赖 jQuery、Popper.js 以及我们自己的 JavaScript 插件。将以下 <script> 标签放到页面尾部且在 </body> 标签之前即可起作用。他们之间的顺序是： jQuery 必须排在第一位，然后是 Popper.js，最后是我们的 JavaScript 插件。
+
+
+
+  增加边框
+（初始边框：1px solid #dee2e6!important）
+border 
+border-top
+border-left
+border-right
+border-bottom
+
+  删除边框
+border-0 
+border-top-0  //上边框
+border-left-0  //左边框
+border-right-0   //右边框
+border-bottom-0  //底边框
+
+   边框颜色
+border border-primary  //蓝色
+border border-secondary   //灰色
+border border-success     //绿色
+border border-danger    //红色
+border border-warning  //黄色
+border border-info    //淡蓝色
+border border-light   //无色
+border border-dark   //黑色
+border border-white   //白色
+   
+  多选和单选
+checkbox //复选框
+checkbox-inline //内联多选
+radio // 单选框
+radio-inline // 内联单选
+disabled //禁用属性
+
+  垂直对齐
+关键词 align
+align-baseline  //基线
+align-top  //顶部
+align-middle  //中间
+align-bottom  //底部
+align-text-top //文本-顶部
+align-text-bottom //文本-底部
+
+  阴影
+  shadow-none  //无阴影
+  shadow-sm  //小阴影
+  shadow  //一般阴影
+  shadow-lg   //大阴影
+
+   共同价值观
+  快速定位类虽然没有响应，但可用。
+   position-static  
+   position-relative
+   position-absolute
+   position-fixed
+   position-sticky
+
+  fixed-top  //固定顶
+  fixed-bottom  //固定底
+  sticky-top  //粘顶
+  
+  按钮Buttons
+  btn btn-outline-primary   //表达主要
+  btn btn-outline-secondary   //次要的信息
+  btn btn-outline-success    //成功的信息
+  btn btn-outline-danger   //危险的信息
+  btn btn-outline-warning  //警告的信息
+  btn btn-outline-info    //信息
+  btn btn-outline-light   //光
+  btn btn-outline-dark   //暗的
+  btn btn-lg   //大按钮
+  btn btn-sm  //小按钮
+   
