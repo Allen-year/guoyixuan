@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        
+    [class*='col']{background-color: skyblue;}
+
+    .col-left{background-color: orange;}
+    .col-center{background: gainsboro;}
+    .col-right{background-color: yellow;}
+
+    @media(max-width:767px){
+         .col-left{
+           display: none;
+         }
+         .col-center{
+             height: 600px;
+         }
+         .col-right{
+            display: none;
+         }
+    }
+
+    @media(min-width:768px) and (max-width:991px){
+        .col-left{
+            height: 600px;
+        }
+        .col-center{
+            height: 600px;
+        }
+        .col-right{
+            display: none;
+        }
+    }
+
+    @media(min-width:992px){
+         .col-left{
+             height: 600px;
+         }
+          .col-center{
+             height: 600px;
+         }
+          .col-right{
+            display: 600px;
+         }
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+
+         <div class="col">顶</div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-left">左</div>
+        <div class="col-md-6 col-lg-4 col-center">中</div>
+        <div class="col-lg-4 col-right">右</div>
+    </div>
+</body>
+</html>
