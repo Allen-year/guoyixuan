@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      body{width: 100%;}
+      *{margin: 0;}
+      .orderw{width:1000px;height: 700px;;border: 1px solid saddlebrown;margin: 0 auto;}
+      .ortop{width: 100%;height: 40px;background-color: #F8F9FA;border: 1px solid #E0E4E7;}
+      .ortop .loc{width: 100px;max-width: 190px;}
+      .ortop .orderwhe{color: #017CFF;}
+      .ordwinwai{height: 600px;width: 900px;margin: 0 auto;border: 1px solid #4DB8C9;margin-top: 20px;}
+      .ordwin{height: 500px;width: 900px;margin: 0 auto;margin-top: 20px;margin-left: 118px;}
+      .ordline{width: 800px;margin: 0 auto;}
+      .ordinp{border: 1px solid red;}
+      .orfontts{font-size: 10px;margin-top: 6px;}
+      .payla{max-width: 166px;}
+      .nopay{width: 170px;}
+      .pay{width: 170px;}
+      .but{width: 550px;margin: 0 auto;}
+      .save{background: none;border: none;}
+      .bake{background: none;border: none;}
+      .disa{width: 100px;text-align: center;}
+      .diba{width: 100px;text-align: center;}
+    </style>
+  </head>
+  <body>
+      <div class="orderw d-flex flex-column">
+          <div class="row ortop no-gutters">
+              <label class="col-3 no-gutters loc">你现在的所在位置是：</label>
+             <div class="col-5 no-gutters orderwhe">
+                订单管理页面 > > 订单添加页面
+             </div>
+          </div>
+          <div class="ordwinwai">
+          <div class="order-window d-flex flex-column justify-content-around ordwin">
+              <div class="row ordline">
+                  <label class="col-lg-2">
+                      订单编码：
+                  </label>
+                  <input class="col-3 ordinp"  />
+                   <div class="col-5 text-danger orfontts">
+                        编码不能为空，请重新输入
+                   </div>
+
+              </div>
+              <div class="row ordline">
+                <label class="col-lg-2">
+                    商品名称：
+                </label>
+                <input class="col-3 ordinp"  />
+                 <div class="col-5 text-danger orfontts">
+                      商品名称不能为空，请重新输入
+                 </div>
+
+            </div>
+            <div class="row ordline">
+                <label class="col-lg-2">
+                    商品单位：
+                </label>
+                <input class="col-3 ordinp"  />
+                 <div class="col-5 text-danger orfontts">
+                      单位不能为空，请重新输入
+                 </div>
+
+            </div>
+            <div class="row ordline">
+                <label class="col-lg-2">
+                    商品数量：
+                </label>
+                <input class="col-3 ordinp"  />
+                 <div class="col-5 text-danger orfontts">
+                      请输入大于0的正自然数，小数点后保留2
+                 </div>
+
+            </div>
+            <div class="row ordline">
+                <label class="col-lg-2">
+                    总金额：
+                </label>
+                <input class="col-3 ordinp"  />
+                 <div class="col-5 text-danger orfontts">
+                    请输入大于0的正自然数，小数点后保留2
+                 </div>
+                </div>
+
+                <div class="row ordline">
+                    <label class="col-lg-2">
+                        供应商：
+                    </label>
+                    <select class="col-lg-3 form-control">
+                        <option>--请选择--</option>
+                    </select>
+                </div>
+                <div class="row ordline">
+                    <label class="col-3 payla">
+                        是否付款：
+                    </label>
+                 <div class="row nopay">
+                    <input class=" form-check-input" type="radio" name="no" value="nopay" />
+                    <lable class="text-success">未付款</lable>
+                </div>
+                <div class="row pay">
+                    <input class=" form-check-input" type="radio" name="no" value="pay" />
+                    <label class="text-success">已付款</label>
+                </div>    
+                </div>
+                <div class="form-group row but">
+                  <div class=" bg-primary mr-4 disa">
+                      <button class="save text-light">保存</button>
+                  </div>
+                  <div class="bg-primary diba">
+                       <button class="bake text-light">返回</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

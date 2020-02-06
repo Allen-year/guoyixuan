@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body{width:100%;}
+        .zuiwai{height: 170px;;width: 1540px;border: 1px solid #D0D0D0;margin: 0 auto;margin-top: 100px;}
+      .shop{width: 1500px;height: 50px;margin: 0 auto;}
+      .tabs{width: 1500px;height: 100px;margin: 0 auto;}
+      .tabs table{border: 1px solid #EDF0F2 ;}
+      
+      .tabs table tr:nth-child(1) td{background-color:#E9ECEF ;text-align: center;font-size: 24px;}
+      .tabs table tr:nth-child(2) td{text-align: center;}
+      .qian{width: 2000px;}      
+      .shopcar{width: 200px;}
+      .shna{width: 40px;max-width: 110px;}
+      /* .cona{width: 40px;max-width: 110px;} */
+      .pona{width: 40px;max-width: 110px;}
+      .anniu{width: 100px;}
+      .cz{text-align: center;border: none;margin-top: 15px;}
+      .addd{margin-top: 10px;}
+      
+    </style>
+  </head>
+  <body>
+      <div class="zuiwai">
+      <div class="shop d-flex justify-content-between">
+          <div class="form-inline row qian">
+              <div class="row col-3 no-gutters">
+              <label class="col-6 no-gutters shna">商品名称：</label>
+              <div class="col-6 no-gutters">
+                   <input />
+              </div>
+              </div>
+              
+              <div class="row col-2 no-gutters">
+                 <label class="col-sm-6 cona">供应商：</label>
+                 <select class="col-sm-6">
+                     <option>--请选择--</option>
+                 </select>
+       
+            </div>
+            <div class="row col-2 no-gutters">
+                <label class="col-sm-6 pona">是否付款</label>
+                <select class="col-sm-6 form-group">
+                    <option>--请选择--</option>
+                </select>
+           
+           </div>
+           <div class="row col-sm-1 no-gutters">
+              <button class="btn-success col-6">查询</button>
+       </div>
+          </div>
+      <div class="shopcar row col-2">
+         <div class="col">
+           <button class="btn-primary  addd">添加订单</button>
+         </div>
+      </div>
+        
+      </div>
+
+      <div class="tabs">
+          <table class="ta" border="1 solid #EDF0F2" width="1500" height="100">
+              <tr>
+                  <td>订单编号</td>
+                  <td>商品名称</td>
+                  <td>供应商</td>
+                  <td>订单金额</td>
+                  <td>是否退款</td>
+                  <td>创建时间</td>
+                  <td>操作</td>
+              </tr>
+              <tr>
+                  <td>BILIBILI2016_001</td>
+                  <td>洗发水，护发素</td>
+                  <td>北京三木堂有限公司</td>
+                  <td>25000.00</td>
+                  <td>未付款</td>
+                  <td>2014-12-14</td>
+                  <td class="d-flex justify-content-around cz">
+                      <div class="bg-info col-sm-3 text-light">聊</div>
+                      <div class="bg-info col-sm-3 text-light">改</div>
+                      <div class="bg-info col-sm-3 text-light">删</div>
+                  </td>
+              </tr>
+          </table>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
