@@ -1,0 +1,9 @@
+     --bootstrap4.4--
+  其中第一堂课学到了container这个是适用于手机开发的
+  container-sm  小页面
+  container-md  中页面
+  container-lg  大页面
+  container-xl  超大页面
+  container-fluid  流试页面
+
+通过新浪云项目的模拟，我感觉这个代码缩放这一块还不太好，没太有思路，改了样式放大缩小还是不行
