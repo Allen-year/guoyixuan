@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body{width: 100%;}
+        .bka{width: 1600px;background-color: #eee8aa;}
+        .bkanr{width: 1200px;height: 100%;margin: 0 auto;border: 1px solid;}
+        .bkanr .bk-header{width:1000px;height: 600px;}
+        .bk-header .perple{border-bottom: 1px solid red;}
+        .daohang{margin-top: 20px;border-bottom: 1px solid red;height: 100%;}
+        .bkanr .bk-body{width: 800px;height: 200px;}
+        .bkanr .bk-footer{width: 800px;height: 200px;}
+        .touxiang{width: 110px;height: 110px;border-radius: 50px;overflow: hidden;background:url('./img/genjismm.jpg')no-repeat -48px;border: 1px solid gray;}
+        /* .gongneng ul{} */
+        .gongneng ul li{list-style: none;}
+    </style>
+  </head>
+  <body>
+      <div class="bka">
+         <div class="bkanr d-flex flex-column justify-content-between align-items-center">
+            <div class="bk-header">
+              <div class="perple">
+               <div class="touxiang">
+                   
+               </div>
+               <div class="gongneng">
+                  <ul class="row">
+                    <li class="col">用户名：<label>gyx</label></li>
+                    <li class="col">年龄：<label>XX</label></li>
+                    <li class="col">电话：XXXXXXXXXXX</li>
+                  </ul>
+                  <ul class="row">
+                    <li class="col">职位：前端工程师，前java工程师</li>
+                    <li class="col">爱好：冒险</li>
+                    <li class="col">动态：<a>点击详情</a></li>
+                  </ul>
+               </div>
+              </div>
+
+              <div class="daohang">
+             <!-- 一级导航栏 -->
+             
+               <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">HTML</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">CSS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">JS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="pills-flex-tab" data-toggle="pill" href="#pills-flex" role="tab" aria-controls="pills-flex" aria-selected="false">Flex</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="pills-JQUERY-tab" data-toggle="pill" href="#pills-JQUERY" role="tab" aria-controls="pills-JQUERY" aria-selected="false">JQUERY</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="pills-BootStrap-tab" data-toggle="pill" href="#pills-BootStrap" role="tab" aria-controls="pills-BootStrap" aria-selected="false">BootStrap</a>
+                </li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+              <!-- 二级HTML导航栏 -->
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="list-group" id="list-tab" role="tablist">
+                        <a class="bg-warning list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">标签</a>
+                        <a class="bg-warning list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">属性</a>
+                        <a class="bg-warning list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">元素</a>
+                        <a class="bg-warning list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">动画</a>
+                        <a class="bg-warning list-group-item list-group-item-action" id="list-textys-list" data-toggle="list" href="#list-textys" role="tab" aria-controls="textys">文字</a>
+                      </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                          超文本标记语言(外国语简称:HTML)标记标签通常被称为HTML标签，HTML标签是HTML语言中最基本的单位，HTML标签是HTML(标准通用标记语言下的一个应用)最重要的组成部分。HTML标签的大小写无关的，例如"主体"&lt;body&gt;跟&lt;BODY&gt;表示的意思是一样的，推荐使用小写。
+                        </div>
+                        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                          就是类的意思，在html中有ID类和CLASS类。其实就是定义引用的型号。而其中ID类是用#来识别，如#a，当你在制作网页时，可用ID=a来应用你之前定义的#a.而CLASS类则是用.a，当你在制作网页时，可用class=a来应用你之前定义的.a。而ID类和CLASS类的区别就是，ID在一个网页中只能被引用一次，而CLASS类可以被多次引用。
+
+                        </div>
+
+                        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+HTML中块级元素一般是其他容器的容器。块级元素可以包含行内元素和其它块级元素，且占据父元素的整个空间，可以设置width和height属性，浏览器通常会在块级元素前后另起一个新行。
+                        </div>
+                              
+                        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                          分三种方式实现：
+
+(1)   canvas元素结合JS
+
+(2)   纯粹的CSS3动画（暂不被所有主流浏览器支持，比如IE）
+
+(3)   CSS3结合Jquery实现
+                        </div>
+                        <div class="tab-pane fade" id="list-textys" role="tabpanel" aria-labelledby="list-textys-list">
+                          定义文字大小和颜色使用font标签对。
+
+基本语法：
+
+&lt;font&gt;……&lt;/font&gt;
+在浏览网页中最先关注的是文章的标题,字体很大很突出. 通常使用&lt;h1&gt;&lt;/h1&gt;对标签.h标签分为6种,分别是 &lt;h1&gt; - &lt;h6&gt; ,字体从大到小.
+标题字的对齐属性（align）
+字体加粗(B标签)
+斜体标记&lt;i&gt;,&lt;em&gt;, &lt;cite&gt;&lt;/cite&gt;
+
+段落标记（P）
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                 <!-- 二级CSS导航栏 -->
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="list-group" id="list-tab" role="tablist">
+                        <a class="bg-warning list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">选择器</a>
+                        <a class="bg-warning list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">属性</a>
+                        <a class="bg-warning list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">定位（position）</a>
+                        <a class="bg-warning list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">伪元素</a>
+                      </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                          选择器内容
+                        </div>
+                        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                          属性内容
+                        </div>
+                        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                          定位（position）内容
+                        </div>
+                        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                          伪元素内容
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+                <!-- js二级导航栏 -->
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="list-group" id="list-tab" role="tablist">
+                        <a class="bg-warning list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">DOM</a>
+                        <a class="bg-warning list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">数组</a>
+                        <a class="bg-warning list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">方法</a>
+                        
+                      </div>
+                    </div>
+                    <div class="col-8">
+                      <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+                        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+                        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+                        
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+                <!-- FLEX二级导航栏 -->
+                  <div class="tab-pane fade" id="pills-flex" role="tabpanel" aria-labelledby="pills-flex-tab"> 
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="list-group" id="list-tab" role="tablist">
+                          <a class="bg-warning list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">介绍</a>
+                          <a class="bg-warning list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">布局</a>
+                          <a class="bg-warning list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">心德</a>
+                          <a class="bg-warning list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">实例</a>
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <div class="tab-content" id="nav-tabContent">
+                          <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+                          <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+                          <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+                          <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- JQUERY二级导航栏 -->
+                  <div class="tab-pane fade" id="pills-JQUERY" role="tabpanel" aria-labelledby="pills-JQUERY-tab"> 
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="list-group" id="list-tab" role="tablist">
+                          <a class="bg-warning list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">介绍</a>
+                          <a class="bg-warning list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+                          <a class="bg-warning list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+                          <a class="bg-warning list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <div class="tab-content" id="nav-tabContent">
+                          <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+                          <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+                          <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+                          <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+                        </div>
+                      </div>
+                    </div>  
+                  </div>
+                  <!-- BootStrap二级导航栏 -->
+                  <div class="tab-pane fade" id="pills-BootStrap" role="tabpanel" aria-labelledby="pills-BootStrap-tab"> 
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="list-group" id="list-tab" role="tablist">
+                          <a class="bg-warning list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">属性</a>
+                          <a class="bg-warning list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
+                          <a class="bg-warning list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
+                          <a class="bg-warning list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <div class="tab-content" id="nav-tabContent">
+                          <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
+                          <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+                          <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+                          <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+             
+
+            </div>
+            </div>
+            <div class="bk-body">
+
+            </div>
+            <div class="bk-footer">
+
+            </div>
+
+         </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
