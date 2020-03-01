@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cutome-file{position: relative;left: 100px;top: 100px;}
+        .cutome-file[type='file']{display: none;}
+    </style>
+</head>
+<body>
+    <div class="cutome-file">
+        <input type="file" name="" id="thumbnail" accept="image/" onchange="upload(event)" />
+        <label for="thumbnail">
+            <img src="" data-src="holder.js/200×200?text=点击上传" alt="" />
+        </label>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.6/holder.min.js"></script>
+    <script>
+        function upload(event){
+            //模拟后端上传，获得上传后的url
+            let url=window.URL.createObjectURL(event.target.file)
+            //将URL设置到img的src属性，进行图片的显示
+            document.querySelector('.cutome-file img').src=url
+        }
+    </script>
+</body>
+</html>
