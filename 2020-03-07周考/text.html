@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        *{margin: 0;}
+        /* Extra small devices (portrait phones, less than 576px) */
+
+    </style>
+  </head>
+  <body>
+    <div class="app">
+        <div class="container vh-100 d-flex justify-content-center align-items-center">
+       <div class="row" id="applb">
+        <div class="col-12" id="wztj">
+            <h2>文章添加</h2>
+            <hr>
+            <div class="form-group">
+                <label class="">标题</label>
+                <input class="" type="text" v-model="text" type="text" autofocus="autofocus" autocomplete="off" />
+            </div>
+            <div class="form-group">
+                <label class="" >类目</label>
+                <select  v-model="kinds"  class="col-3">
+                    <option>默认</option>
+                    <option>类目1</option>
+                    <option>类目2</option>
+                    <option>类目3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>内容</label>
+                <textarea v-model="detai"></textarea>
+            </div>
+            <div class="custom-control custom-switch">
+                
+              <label class="col-3">热门</label>
+                <input type="checkbox" v-model="finish"  class="custom-control-input " id="customSwitchr"/>
+                <label class="custom-control-label" for="customSwitchr"></label>
+               
+            </div>
+           <button class="" @click="add">提交</button>
+            
+    
+        </div>
+        <div class="col mt-3">
+            <h2>文章列表</h2>
+            <hr>
+            <div >
+                <ol>
+                  
+                   <li v-if="libi.finish"  class="input-lg bg-danger" v-for="libi in liebiao">
+                    热门,
+                    {{ libi.kind }},
+                       
+                       {{ libi.text }},
+                       {{ libi.title }}
+                   </li>
+                   <li v-if="!libi.finish" class="input-lg" v-for="libi in liebiao">
+                   
+                 {{ libi.kind }},
+                    
+                    {{ libi.text }},
+                    {{ libi.title }}
+                </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+         var applb=new Vue({
+             el :'#applb',
+
+             data:{
+                finish: false,
+                 liebiao:[
+                     { finish:true, kind:'类目1', title: '标题1' ,text:'哈哈哈哈哈哈哈11' },
+                     { finish:false,  kind:'类目2', title: '标题2' ,text:'哈哈哈哈哈哈哈22' },
+                     { finish:false,  kind:'类目2', title: '标题3' ,text:'哈哈哈哈哈哈哈33' },
+                     {finish:true,  kind:'类目3', title: '标题4' ,text:'哈哈哈哈哈哈哈44' }
+                     ]
+             },
+             methods: {
+                 add:function(){
+                      console.log('登录')
+                      this.finish=this.finish
+                      this.liebiao.push({finish:this.finish,kind:this.kinds,title:this.detai ,text:this.text})
+                      
+                 }
+             },
+             
+            
+         })
+
+        //  var wztj=new Vue({
+        //      el: '#wztj',
+        //      data:{
+        //         inputtitle: 'ddd',
+        //      },
+        //      methods: {
+        //          add(){
+        //               console.log('登录')
+                      
+        //          }
+        //      },
+        //  })
+    </script>
+  </body>
+</html>
