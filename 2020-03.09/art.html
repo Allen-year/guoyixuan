@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{width: 100%;}
+        .test{width: 1000px;height: 600px;;margin: 0 auto;border: 1px solid red;}
+        #app{width: 400px;margin: 0 auto ;border: 1px solid red;}
+        /* .ss{line-height: 19px;} */
+        .app-c{width: 350px;margin: 0 auto;}
+        .appadde{width: 150px;margin: 0 auto;}
+        .ladel{display: none;}
+        .ss:hover .ladel{display: block;}
+    </style>
+</head>
+<body>
+    <div class="test">
+    <div id="app">
+        <div class="app-c">
+         <h1> {{ message }}</h1>
+         <ul>
+             <li class="ss" v-for="item,index in objArr" @click="anotherfun(index,item)">
+               <items :index="index" :title="item"></items>
+             </li>
+
+         </ul>
+         <div >
+              <P><input type="text" v-model="inputValue" autofocus="autofocus" autocomplete="off" @keyup.enter="add"  />   
+              </P>
+              <p class="appadde">
+              <input type="button" value="新增" @click="add" />
+              <button>删除</button>
+            </p>
+        </div>
+    </div>
+    </div>
+</div>
+<template id="items">
+    <div>
+    {{ index+1 }}{{ title }}
+    <label  @click="remove(index)" >删除</label>
+    <button class="ladel" @click="finish(index,item)">已完成</button>
+</div>
+</template>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+        Vue.component('items',{
+            props:['index','title'],
+            template: '#items'
+        })
+
+        var app=new Vue({
+            el: '#app',
+            data:{
+                message: '开始录入信息',
+                 inputValue:'',
+                objArr:[
+                    ".待办事项一",
+                    ".待办事项二",
+                    ".待办事项三",
+                    ".待办事项四",
+                ]
+            },methods: {
+                add:function(){
+                    this.objArr.push(this.inputValue)
+                },
+
+
+                remove:function(ind){
+                //    console.log('删除')
+                //    console.log(ind)
+                   this.objArr.splice(ind,1)
+                },
+                anotherfun:function(index,item){
+                    // console.log('测试')
+                    // console.log(item)
+                    inputValue:'dd'
+                    this.search
+                },
+                // finish:function(ind,itm){
+                //     console.log('已完成')
+                //     this.objArr[]
+                // }
+                
+            }
+        })
+    </script>
+</body>
+</html>

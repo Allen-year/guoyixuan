@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <title>待办列表</title>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container vh-100 d-flex justify-content-center align-items-center">
+            <template v-if="userState == -1">
+                <card>
+                    <template v-slot:header>
+                        <h3>欢迎注册</h3>
+                    </template>
+                    <card-form submit-button-text="注 册" @submit="regist" key="regist"></card-form>
+                    <template v-slot:footer>
+                        <button class="btn btn-link text-secondary"
+                            @click="setUserState(0)">如果您已注册账户，请点击此处登录</button>
+                    </template>
+                </card>
+            </template>
+
+            <template v-else-if="userState == 0">
+                <card>
+                    <template v-slot:header>
+                        <h3>欢迎登陆</h3>
+                    </template>
+                    <card-form submit-button-text="登 录" @submit="login" key="login"></card-form>
+                    <template v-slot:footer>
+                        <button class="btn btn-link text-secondary" @click="setUserState(-1)">如果您还没有账户，请点击此处注册</button>
+                    </template>
+                </card>
+            </template>
+
+            <template v-else>
+                <div class="text-center">
+                    <h1>您好，{{user.username}}</h1>
+                    <hr>
+                    <button class="btn btn-link small text-secondary" @click="setUserState(0)">点击此处退出</button>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <template id="formGroupInput">
+        <div class="form-group">
+            <input type="input" class="form-control" :placeholder="placeholder" :value="username"
+                @input="$emit('input',$event.target.value)">
+        </div>
+    </template>
+    <template id="formGroupPassword">
+        <div class="form-group">
+            <div class="input-group">
+                <input :type="type" class="form-control" :placeholder="placeholder" :value="password"
+                    @input="$emit('input',$event.target.value)">
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-primary"
+                        @click="isShowPassword=!isShowPassword">{{ passwordButtonText }}</button>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="formGroupSubmit">
+        <div class="form-group">
+            <button type="button" class="btn btn-primary form-control" :disabled="disabled"
+                @click="$emit('click')">{{btnText}}</button>
+        </div>
+    </template>
+
+    <template id="card">
+        <div class="card border-0">
+            <div class="card-header bg-white">
+                <slot name="header"></slot>
+            </div>
+            <div class="card-body">
+                <slot></slot>
+            </div>
+            <div class="card-footer bg-white text-center small">
+                <slot name="footer"></slot>
+            </div>
+        </div>
+    </template>
+
+    <template id="cardForm">
+        <form>
+            <form-group-input placeholder="请输入用户名" :key="`${key}Text`" v-model="username">
+            </form-group-input>
+            <form-group-password placeholder="请输入密码" :key="`${key}Password`" v-model="password">
+            </form-group-password>
+            <form-group-submit :disabled="isDisabledSubmit" :btn-text="submitButtonText" @click="$emit('submit',username,password)">
+            </form-group-submit>
+        </form>
+    </template>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+        Vue.component('formGroupInput', {
+            model: {
+                prop: 'username',
+                event: 'input'
+            },
+            props: {
+                username: {
+                    default: ''
+                },
+                placeholder: {
+                    default: ''
+                }
+            },
+            template: '#formGroupInput'
+        })
+        Vue.component('formGroupPassword', {
+            model: {
+                prop: 'password',
+                event: 'input'
+            },
+            props: {
+                password: {
+                    default: ''
+                },
+                placeholder: {
+                    default: ''
+                }
+            },
+            data: function () {
+                return {
+                    isShowPassword: false
+                }
+            },
+            computed: {
+                passwordButtonText: function () {
+                    return this.isShowPassword ? '隐藏' : '显示'
+                },
+                type: function () {
+                    return this.isShowPassword ? 'text' : 'password'
+                }
+            },
+            template: '#formGroupPassword'
+        })
+        Vue.component('formGroupSubmit', {
+            props: {
+                disabled: {
+                    default: false
+                },
+                btnText: {
+                    default: '按钮'
+                }
+            },
+            template: '#formGroupSubmit'
+        })
+
+        Vue.component('card', {
+            template: '#card'
+        })
+
+        const cardForm = {
+            props: {
+                submitButtonText: {
+                    default: '提交'
+                },
+                key:{
+                    default:''
+                }
+            },
+            data: function () {
+                return {
+                    username: '',
+                    password: ''
+                }
+            },
+            computed: {
+                isDisabledSubmit:function(){
+                    return this.username.length == 0 || this.password.length == 0
+                }
+            },
+            template: '#cardForm'
+        }
+
+        let app = new Vue({
+            components: {
+                'cardForm': cardForm
+            },
+            el: '#app',
+            data: {
+                userState: -1, // 用户状态 -1=>未注册 0=>已注册未登录 1=>已登录
+                user: { username: '', password: '' }, // 注册后的用户信息
+            },
+            methods: {
+                setUserState(state) {
+                    this.userState = state
+                },
+                regist(username,password) {
+                    this.user.username = username
+                    this.user.password = password
+                    alert('注册完成')
+                    this.setUserState(0)
+                },
+                login(username,password) {
+                    if (this.user.username == username && this.user.password == password) {
+                        this.setUserState(1)
+                    } else {
+                        alert('登陆失败')
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
