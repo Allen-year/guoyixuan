@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="app">
+        <div class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <span class="navbar-brand">SMS</span>
+            <span class="navbar-text">欢迎使用CMS</span>
+            <div class="ml-auto">
+                <span class="navbar-text">欢迎登录[admin]</span>
+                <a href="#" class="navbar-text">退出</a>
+
+            </div>
+        </div>
+
+        <div class="container-fluid vh-100 pt-5">
+            <div class="row vh-100">
+                <div class="col-3 p-0 h-100">
+                    <card title="内容整理" class="p-0 h-100 rounded-0" header-class="bg-white">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item" v-for="nav,index in navs" :key="index">
+                                <router-link :to="nav.path">{{ nav.title }}</router-link>
+                            </li>
+                        </ul>
+                    </card>
+                </div>
+                <div class="col-9 p-0">
+                    <router-view></router-view>
+                </div>
+            </div>
+        </div>
+    </div>
+    <template id="card">
+        <div class="card">
+            <div class="card-header" :class="headerClass">
+                <h3 class="card-title">{{ title }}</h3>
+            </div>
+            <div class="card-body" :class="bodyClass">
+                <slot></slot>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="customSwitch">
+       <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" :id="dataId" :checked="checked"
+         @change="$emit('change',$event.target.checked)" />
+        <label :for="dataId" class="custom-control-label"></label>
+       </div>
+    </template>
+
+
+    <template id="articleList">
+        <card title="文章列表" class="p-0 border-0" header-class="bg-white border-0">
+            <table class="table table-bordered table-hover">
+                 <thead class="bg-dark text-white text-center">
+                     <tr>
+                         <th>序号</th>
+                         <th>标题</th>
+                         <th>类目</th>
+                         <th>热门</th>
+                         <th>操作</th>
+                     </tr>
+                 </thead>
+                <tbody class="text-center">
+                    <tr v-for="article,index in articles" ::key="index">
+                        <td>{{ index+1 }}</td>
+                        <td>标题1</td>
+                        <td>栏目2</td>
+                        <td>啦啦啦</td>
+                        <td>
+                            <router-link class="btn btn-primary btn-sm" to="/article/edit/1">编辑</router-link>
+                            <button class="btn btn-danger btn=sm">删除</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </card>
+    </template>
+    <template id="articleEdit">
+        <card title="新增文章" class="p-0 border-0" header-class="bg-white border-0"></card>
+    </template>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+ 
+    <script>
+        const navs = [
+            { path: '/article/edit', title: '新增文章' },
+            { path: '/article/list', title: '文章列表' },
+        ]
+        const categories =[
+
+        ]
+        const article =[
+            {title: '标题1',category:1,hot:true},
+            {title: '标题2',category:2,hot:false},
+            {title: '标题3',category:3,hot:false},
+        ]
+        Vue.component('card', {
+            template: '#card',
+            props: {
+                title: {
+                    default: ''
+                },
+                headerClass: {
+                    default: ''
+                },
+                bodyClass: {
+                    default: ''
+                }
+            }
+        })
+        Vue.component('customSwitch',{
+            template: '#customSwitch'
+        })
+        const articleList = {
+            template: '#articleList',
+            data: function(){
+                return{
+                    article: articles,
+                    categories: categories
+                
+            }
+        }
+            // },methods: {
+            //     del(index){
+            //         if(window.confirm('确认删除')){
+            //             this.articles.splice(index,1)
+            //         }
+            //     }
+            // },
+        }
+
+        const articleEdit = {
+            template: '#articleEdit'
+        }
+
+        const app = new Vue({
+            router:new VueRouter({
+                routes: [
+                    { path: '/article/list', component: articleList },
+                    { path: '/article/edit', component: articleEdit }
+                ]
+            }),
+            el: '#app',
+            data: {
+                navs: navs
+            }
+        })
+
+    </script>
+</body>
+
+</html>
